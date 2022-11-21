@@ -25,7 +25,7 @@ const getPropName = (param) => `${param} name`
 // const PropName = [getPropName("student")] (2)
 
 const tasks = {
-    [todolistId_1]: [ //"1"
+    [todolistId_1]: [ //"1" todolist[0].id
         // todolistId_1: [ //"todolistId_1"
         {id: '11', title: 'HTML'},
         {id: '12', title: 'CSS'},
@@ -55,4 +55,10 @@ console.log(tasks)
 console.log(tasks[getPropName('student')])
 console.log(Object.keys(tasks))
 
+const newTask = {id:"14", title:"React"}
+const copyTask = {...tasks, [todolistId_1]: [...tasks[todolistId_1], newTask]}
+// console.log([...tasks[todolistId_1], newTask])
+console.log(copyTask)
 
+//delete id23
+console.log({...tasks, [todolistId_2]: tasks})
