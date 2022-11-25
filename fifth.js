@@ -78,3 +78,38 @@ console.log(students.sort((a,b)=>{
     }))
 
 console.log(students.sort((a,b)=>a.name.localeCompare(b.name)).reverse())
+//buble sort---------------------------------------------------------------------------------------
+let nums = [12,23,34,9,91,1,25,66] // по возрастанию
+for (let i=0; i<nums.length - 1; i++){ //повторяем цикл пока не отсортируем по порядку(капипастим)
+    if(nums[i]>nums[i+1]){
+        let temp = nums[i]
+        nums[i] = nums[i+1]
+        nums[i+1] = temp
+    }
+}
+for (let i=0; i<nums.length - 1; i++){ //повторяем цикл пока не отсортируем по порядку(капипастим)
+    if(nums[i]>nums[i+1]){
+        let temp = nums[i]
+        nums[i] = nums[i+1]
+        nums[i+1] = temp
+    }
+}
+console.log(nums)
+//------------------другой вариант
+let numss = [12,23,34,9,91,1,25,66]
+
+for(let i=0; i<numss.length - 1; i++) {
+    let isSorted = true
+    for (let q = 0; q < numss.length - 1; q++) {
+        if (numss[q] > numss[q + 1]) {
+            isSorted = false;
+            // let tempa = numss[q]
+            // numss[q] = numss[q + 1]
+            // numss[q + 1] = tempa //старый способ
+            [numss[q], numss[q+1]] = [numss[q+1],numss[q]]
+            // let [a,b] = [numss[q+1],numss[q]]
+        }
+    }
+    if(isSorted)break
+}
+console.log(numss.reverse())
